@@ -70,7 +70,7 @@ logging.basicConfig(
 # БАЗА ДАННЫХ
 # =========================
 
-DB_PATH = "standfarm.db"
+DB_PATH = os.path.join(os.getenv("RAILWAY_VOLUME_MOUNT_PATH", "."), "standfarm.db")
 
 conn = sqlite3.connect(DB_PATH, check_same_thread=False)
 conn.row_factory = sqlite3.Row
